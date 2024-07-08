@@ -91,8 +91,7 @@ A JSON array containing the labor costs by worker
     {
         "username": "Blake_Harber41",
         "total_cost": 123.45
-    },
-    ...
+    }
 ]
 ```
 
@@ -151,8 +150,7 @@ A JSON array containing the labor costs by worker
   {
     "name": "Marianborough",
     "total_cost": "728.59"
-  },
-    ...
+  }
 ]
 ```
 
