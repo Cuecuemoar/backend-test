@@ -4,12 +4,19 @@
   "description": "I'm a server!",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon -L index.js",
+    "start-prod": "node index.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "author": "",
   "type": "module",
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "express": "^4.18.3",
-    "mariadb": "^3.2.3"
+    "express-validator": "^7.1.0",
+    "jest": "^29.7.0",
+    "mariadb": "^3.2.3",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
   }
 }
