@@ -1,6 +1,6 @@
 import { describe, test, expect } from '@jest/globals';
 import request from 'supertest';
-import app from '../index.js'
+import app from '../index.js';
 import {calculateDiscrepancy, sumCosts} from "../utils/helpers.js";
 
 describe('GET /labor-costs', () => {
@@ -38,10 +38,10 @@ describe('GET /labor-costs', () => {
         const {body: workersResponse} = await request(app).get('/labor-costs/workers');
         const {body: locationsResponse} = await request(app).get('/labor-costs/locations');
 
-        const workersTotal = sumCosts(workersResponse)
-        const locationsTotal = sumCosts(locationsResponse)
+        const workersTotal = sumCosts(workersResponse);
+        const locationsTotal = sumCosts(locationsResponse);
 
-        expect(calculateDiscrepancy(workersTotal, locationsTotal)).toBeLessThan(.00001)
+        expect(calculateDiscrepancy(workersTotal, locationsTotal)).toBeLessThan(.00001);
     });
 
     test('Validate (in)complete task status logic by verifying that the total of (in)complete tasks is the same' +
@@ -54,7 +54,7 @@ describe('GET /labor-costs', () => {
         const completeTasksTotal = sumCosts(completeTasks);
         const incompleteTasksTotal = sumCosts(incompleteTasks);
 
-        expect(calculateDiscrepancy(allTasksTotal, completeTasksTotal + incompleteTasksTotal)).toBeLessThan(.00001)
+        expect(calculateDiscrepancy(allTasksTotal, completeTasksTotal + incompleteTasksTotal)).toBeLessThan(.00001);
     });
 
 });

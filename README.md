@@ -84,7 +84,8 @@ If not provided, all tasks will be included.
 **Responses**
 
 `200 OK`
-A JSON array containing the labor costs by worker
+
+A JSON array containing the labor costs by worker.
 
 ```json
 [
@@ -114,7 +115,7 @@ If the `worker_ids` or `location_ids` are not valid integers or if `task_status`
 
 `500 Bad Request`
 
-500 Internal Server Error: If an error occurs while processing the request.
+If an error occurs while processing the request.
 
 ```json
 {
@@ -143,7 +144,8 @@ If not provided, all tasks will be included.
 **Responses**
 
 `200 OK`
-A JSON array containing the labor costs by worker
+
+A JSON array containing the labor costs by location.
 
 ```json
 [
@@ -173,7 +175,7 @@ If the `worker_ids` or `location_ids` are not valid integers or if `task_status`
 
 `500 Bad Request`
 
-500 Internal Server Error: If an error occurs while processing the request.
+If an error occurs while processing the request.
 
 ```json
 {
