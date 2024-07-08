@@ -12,7 +12,7 @@ describe('GET /labor-costs', () => {
     });
 
     test('Test a good response with all query parameters', async () => {
-        const response = await request(app).get('/labor-costs/workers?worker_ids=1,2,3,4,5,6,7,8,9&location_id=3&task_status=complete');
+        const response = await request(app).get('/labor-costs/workers?worker_ids=1,2,3,4,5,6,7,8,9&location_id=3,4,5&task_status=complete');
         expect(response.status).toBe(200);
         expect(response.headers['content-type']).toMatch(/json/);
         expect(response.body.length).toBeGreaterThanOrEqual(1);

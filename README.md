@@ -76,7 +76,7 @@ completion status of tasks.
 
 `worker_ids` (optional): A comma-separated list of worker IDs to filter by. If not provided, all workers will be included. 
 
-`location_id` (optional): A single location ID to filter by. If not provided, all locations will be included.
+`location_ids` (optional): A comma-separated list of location IDs to filter by. If not provided, all locations will be included.
 
 `task_status` (optional): A completion value of tasks to filter by. Acceptable values are `complete` and `incomplete` 
 If not provided, all tasks will be included.
@@ -97,7 +97,7 @@ A JSON array containing the labor costs by worker
 
 `400 Bad Request`
 
-If the `worker_ids` or `location_id` are not valid integers or if `task_status` is invalid.
+If the `worker_ids` or `location_ids` are not valid integers or if `task_status` is invalid.
 ```json
 {
   "errors": [
@@ -135,7 +135,7 @@ completion status of tasks.
 
 `worker_ids` (optional): A comma-separated list of worker IDs to filter by. If not provided, all workers will be included.
 
-`location_id` (optional): A single location ID to filter by. If not provided, all locations will be included.
+`location_ids` (optional): A comma-separated list of location IDs to filter by. If not provided, all locations will be included.
 
 `task_status` (optional): A completion value of tasks to filter by. Acceptable values are `complete` and `incomplete` 
 If not provided, all tasks will be included.
@@ -156,7 +156,7 @@ A JSON array containing the labor costs by worker
 
 `400 Bad Request`
 
-If the `worker_ids` or `location_id` are not valid integers or if `task_status` is invalid.
+If the `worker_ids` or `location_ids` are not valid integers or if `task_status` is invalid.
 ```json
 {
   "errors": [

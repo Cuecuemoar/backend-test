@@ -1,7 +1,7 @@
 import pool from '../database/database.js';
 import { WORKERS_TYPE, ALLOWED_TASK_STATUSES } from "../constants.js";
 
-const calculateLaborCostsByWorkerOrLocation = async (workerIds = '', locationId = '', taskStatus = '', type) => {
+const calculateLaborCostsByWorkerOrLocation = async (workerIds = '', locationIds = '', taskStatus = '', type) => {
     const connection = await pool.getConnection();
 
     try {
@@ -22,9 +22,10 @@ const calculateLaborCostsByWorkerOrLocation = async (workerIds = '', locationId 
             values.push(workers);
         }
 
-        if (locationId.length > 0) {
-            conditions.push('locations.id = ?');
-            values.push(locationId);
+        if (locationIds.length > 0) {
+            conditions.push('locations.id IN (?)');
+            const locations = locationIds.split(',')
+            values.push(locations);
         }
 
         if (taskStatus.length > 0) {
@@ -37,6 +38,7 @@ const calculateLaborCostsByWorkerOrLocation = async (workerIds = '', locationId 
         }
 
         query += ` GROUP BY ${type === WORKERS_TYPE ? 'workers.username' : 'locations.name'}`;
+        console.log(query)
         return await connection.query(query, values);
     } catch (e) {
         throw e;

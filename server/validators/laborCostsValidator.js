@@ -3,7 +3,7 @@ import { ALLOWED_TASK_STATUSES } from "../constants.js";
 
 const taskStatusNames = Object.keys(ALLOWED_TASK_STATUSES)
 
-const validateWorkerIds = (field) => [
+const validateIds = (field) => [
     query(field)
         .optional()
         .custom((value) => {
@@ -16,15 +16,6 @@ const validateWorkerIds = (field) => [
         .withMessage(`${field} must be an integer or a comma-separated list of integers greater than 0`),
 ];
 
-const validateLocationId = (field) => [
-    query(field)
-        .optional()
-        .custom((value) => {
-            return /^\d+$/.test(value) && parseInt(value, 10) > 0;
-        })
-        .withMessage(`${field} must be an integer greater than 0`),
-];
-
 const validateCompleted = (field) => [
     query(field)
         .optional()
@@ -33,8 +24,8 @@ const validateCompleted = (field) => [
 ];
 
 const validateLaborCostInputs = [
-    ...validateWorkerIds('worker_ids'),
-    ...validateLocationId('location_id'),
+    ...validateIds('worker_ids'),
+    ...validateIds('location_id'),
     ...validateCompleted('task_status'),
     (req, res, next) => {
         const errors = validationResult(req);
