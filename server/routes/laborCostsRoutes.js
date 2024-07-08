@@ -7,4 +7,4 @@ const laborRouter = express.Router()
 laborRouter.get('/workers', validateLaborCostInputs, getLaborCostsByWorkerOrLocation);
 laborRouter.get('/locations', validateLaborCostInputs, getLaborCostsByWorkerOrLocation);
 
-export default laborRouter
+export default laborRouter;

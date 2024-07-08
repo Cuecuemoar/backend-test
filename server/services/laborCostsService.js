@@ -18,19 +18,19 @@ const calculateLaborCostsByWorkerOrLocation = async (workerIds = '', locationIds
 
         if (workerIds.length > 0) {
             conditions.push('workers.id IN (?)');
-            const workers = workerIds.split(',')
+            const workers = workerIds.split(',');
             values.push(workers);
         }
 
         if (locationIds.length > 0) {
             conditions.push('locations.id IN (?)');
-            const locations = locationIds.split(',')
+            const locations = locationIds.split(',');
             values.push(locations);
         }
 
         if (taskStatus.length > 0) {
-            conditions.push(`tasks.is_complete = ?`)
-            values.push(ALLOWED_TASK_STATUSES[taskStatus])
+            conditions.push(`tasks.is_complete = ?`);
+            values.push(ALLOWED_TASK_STATUSES[taskStatus]);
         }
 
         if (conditions.length > 0) {
@@ -49,4 +49,4 @@ const calculateLaborCostsByWorkerOrLocation = async (workerIds = '', locationIds
 
 export {
     calculateLaborCostsByWorkerOrLocation
-}
+};

@@ -36,4 +36,4 @@ const validateLaborCostInputs = [
     },
 ];
 
-export default validateLaborCostInputs
+export default validateLaborCostInputs;

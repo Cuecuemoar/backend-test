@@ -15,4 +15,4 @@ const getLaborCostsByWorkerOrLocation = async (req, res) => {
 
 export {
     getLaborCostsByWorkerOrLocation
-}
+};
